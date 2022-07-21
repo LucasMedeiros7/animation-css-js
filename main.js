@@ -1,13 +1,16 @@
+const btn = document.querySelector('button');
 let isInfinite = false;
 
 function infiniteAnimation() {
   isInfinite = isInfinite ? false : true;
 
   if (isInfinite) {
+    btn.innerHTML = `Desativar animação infinita`;
     document.querySelectorAll('.load-bar').forEach(bar => {
       bar.style.animation = `load ${Math.random() * 3 + 2}s linear infinite`;
     });
   } else {
+    btn.innerHTML = `Ativar animação infinita`;
     document.querySelectorAll('.load-bar').forEach(bar => {
       bar.style.animation = '';
     });
